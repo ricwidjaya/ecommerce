@@ -1,0 +1,110 @@
+{{! Navbar }}
+<nav class='container bg-white py-3'>
+  <div class='row align-items-center'>
+    {{! Nav links }}
+    <div class='col'>
+      <div class='nav-items d-flex justify-content-center gap-4'>
+        <a href='#' class='nav-link fw-bold'>Home</a>
+        <div class='dropdown'>
+          <button
+            class='btn nav-link dropdown-toggle'
+            type='link'
+            data-bs-toggle='dropdown'
+            aria-expanded='false'
+          >
+            Shop
+          </button>
+          <ul class='dropdown-menu'>
+            <li><a class='dropdown-item' href='#'>Beef</a></li>
+            <li><a class='dropdown-item' href='#'>Seafood</a></li>
+            <li><a class='dropdown-item' href='#'>Other Meats</a></li>
+            <li><a class='dropdown-item' href='#'>Sauce/Spices</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {{! Logo }}
+    <div class='col text-center'>
+      <a class='navbar-brand' href='#'>
+        <img
+          src='https://steaky.s3.ap-southeast-1.amazonaws.com/steaky_logo.jpeg'
+          alt='logo'
+          width='100'
+          class='d-inline-block align-text-top'
+        />
+      </a></div>
+
+    {{! Nav user icons }}
+    <div class='col'>
+      <div
+        class='nav-items d-flex justify-content-end gap-3 align-items-center'
+      >
+        <a href='#' class='nav-link'>
+          <i class='bi bi-person pe-2'></i>My Account
+        </a>
+        <a href='#' class='nav-link'>
+          <i class='bi bi-heart pe-2'></i>Favorites
+        </a>
+        <a
+          class='nav-link'
+          data-bs-toggle='offcanvas'
+          href='#viewCartItems'
+          role='button'
+          aria-controls='viewCartItems'
+        >
+          <i class='bi bi-cart4 pe-2'></i>Cart
+        </a>
+        <a
+          class='nav-link fw-bold'
+          data-bs-toggle='offcanvas'
+          href='#viewCartItems'
+          role='button'
+          aria-controls='viewCartItems'
+        >
+          NTD$0
+        </a>
+
+        {{! offcanvas cart items }}
+        <div
+          class='offcanvas offcanvas-end'
+          tabindex='-1'
+          id='viewCartItems'
+          aria-labelledby='viewCartItems'
+        >
+          <div class='offcanvas-header'>
+            <h5 class='offcanvas-title' id='offcanvasExampleLabel'>Cart</h5>
+            <button
+              type='button'
+              class='btn-close'
+              data-bs-dismiss='offcanvas'
+              aria-label='Close'
+            ></button>
+          </div>
+          <div class='offcanvas-body'>
+            <div>
+              Some text as placeholder. In real life you can have the elements
+              you have chosen. Like, text, images, lists, etc.
+            </div>
+            <div class='dropdown mt-3'>
+              <button
+                class='btn btn-secondary dropdown-toggle'
+                type='button'
+                data-bs-toggle='dropdown'
+              >
+                Dropdown button
+              </button>
+              <ul class='dropdown-menu'>
+                <li><a class='dropdown-item' href='#'>Action</a></li>
+                <li><a class='dropdown-item' href='#'>Another action</a></li>
+                <li><a class='dropdown-item' href='#'>Something else here</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</nav>

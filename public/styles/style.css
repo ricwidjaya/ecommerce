@@ -1,0 +1,13 @@
+*,
+body {
+  font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+}
+
+/* Bootstrap override */
+.bi {
+  font-size: 1.2em;
+}
+
+.btn {
+  border: none;
+}
