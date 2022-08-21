@@ -11,6 +11,7 @@ const hbs = require('express-handlebars')
 // Pages and API Routers
 app.use('/', pages)
 app.use('/api', api)
+app.use(express.static('public'))
 
 // Setting Express Handlebars
 app.engine('hbs', hbs.engine({ extname: '.hbs' }))
