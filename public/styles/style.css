@@ -21,13 +21,17 @@ body {
 }
 
 /* styles */
-.form-control {
+.form-control,
+.form-control:focus {
   background-color: transparent;
   border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #fff;
+  color: #fff;
 }
 
 .form-control::placeholder {
-  color: var(--footer-font-color);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Footer */
