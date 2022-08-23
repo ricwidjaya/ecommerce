@@ -51,9 +51,19 @@ body {
   font-size: 3em;
 }
 
-.subtitle {
+.title-description {
   font-size: 2em;
   color: var(--light-font-color);
+}
+
+/* Product Grid */
+.card {
+  border: none;
+}
+
+img {
+  max-width: 100%;
+  aspect-ratio: 1;
 }
 
 /* Footer */
