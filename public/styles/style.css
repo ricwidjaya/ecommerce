@@ -66,6 +66,12 @@ img {
   aspect-ratio: 1;
 }
 
+/* Partner */
+.partner-img {
+  max-width: 100px;
+  height: auto;
+}
+
 /* Footer */
 .footer {
   background-color: var(--primary-color);
