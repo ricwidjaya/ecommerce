@@ -1,7 +1,8 @@
 /* Variables */
 :root {
   --primary-color: #1f2937;
-  --footer-font-color: #fff;
+  --light-font-color: #fff;
+  --input-placeholder-color: rgba(255, 255, 255, 0.6);
 }
 
 /* Css reset */
@@ -16,26 +17,47 @@ body {
   font-size: 1.2em;
 }
 
-.btn {
+.btn,
+.btn:focus,
+.btn:hover {
+  background-color: var(--light-font-color);
   border: none;
+  box-shadow: none;
+  color: #1f2937;
 }
 
-/* styles */
 .form-control,
 .form-control:focus {
   background-color: transparent;
   border-radius: 0;
   box-shadow: none;
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid var(--light-font-color);
+  color: var(--light-font-color);
 }
 
 .form-control::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--input-placeholder-color);
+}
+
+/* Title */
+.head-banner {
+  padding: 8rem 5rem;
+  background: url('https://images.unsplash.com/photo-1558030089-02acba3c214e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80')
+    no-repeat fixed center;
+  color: var(--light-font-color);
+}
+
+.title {
+  font-size: 3em;
+}
+
+.subtitle {
+  font-size: 2em;
+  color: var(--light-font-color);
 }
 
 /* Footer */
 .footer {
   background-color: var(--primary-color);
-  color: var(--footer-font-color);
+  color: var(--light-font-color);
 }
