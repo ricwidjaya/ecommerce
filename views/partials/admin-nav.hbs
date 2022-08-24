@@ -1,0 +1,29 @@
+{{! Navbar }}
+<nav class='container-fluid bg-white sticky-top'>
+  <div class='row align-items-center'>
+    {{! Logo }}
+    <div class='col text-center'>
+      <a class='navbar-brand' href='#'>
+        <img
+          src='https://steaky.s3.ap-southeast-1.amazonaws.com/steaky_logo.jpeg'
+          alt='logo'
+          width='100'
+          class='d-inline-block align-text-top'
+        />
+      </a>
+    </div>
+    {{! Empty column }}
+    <div class='col'></div>
+
+    {{! Nav links }}
+    <div class='col'>
+      <div class='nav-items d-flex justify-content-center gap-4'>
+        <a href='/admin' class='nav-link'>Order</a>
+        <a href='/admin' class='nav-link'>Customer</a>
+        <a href='/admin' class='nav-link'>Product</a>
+        <a href='/admin' class='nav-link text-danger'>Logout</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
