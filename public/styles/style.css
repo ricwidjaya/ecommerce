@@ -79,6 +79,13 @@ body {
   color: var(--admin-csv-button-color);
 }
 
+.new-product-btn,
+.new-product-btn:hover,
+.new-product-btn:focus {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
 /* Product Grid */
 .card {
   border: none;

@@ -19,6 +19,17 @@ const adminController = {
     } catch (error) {
       next(error)
     }
+  },
+
+  getProductPage: async (req, res, next) => {
+    try {
+      return res.render('admin/product', {
+        layout: 'admin',
+        route: 'product'
+      })
+    } catch (error) {
+      next(error)
+    }
   }
 }
 

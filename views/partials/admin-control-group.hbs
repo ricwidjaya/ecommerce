@@ -9,7 +9,12 @@
     {{/ifCond}}
 
     {{#ifCond route 'product'}}
-      <h1>Product</h1>
+      <div class='d-flex align-items-center gap-5'>
+        <h1>Product</h1>
+        <a href='/admin/product/new' class='btn new-product-btn'><i
+            class='bi bi-plus'
+          ></i>New Product</a>
+      </div>
     {{/ifCond}}
   </div>
   {{! Control group }}
