@@ -18,7 +18,7 @@
     {{! Nav links }}
     <div class='col'>
       <div class='nav-items d-flex justify-content-center gap-4'>
-        <a href='/admin' class='nav-link'>Order</a>
+        <a href='/admin' class='nav-link {{#ifCond route 'order'}}fw-bold{{/ifCond}}'>Order</a>
         <a href='/admin' class='nav-link'>Customer</a>
         <a href='/admin' class='nav-link'>Product</a>
         <a href='/admin' class='nav-link text-danger'>Logout</a>

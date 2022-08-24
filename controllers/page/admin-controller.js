@@ -2,7 +2,8 @@ const adminController = {
   getOrder: async (req, res, next) => {
     try {
       return res.render('admin/order', {
-        layout: 'admin'
+        layout: 'admin',
+        route: 'order'
       })
     } catch (error) {
       next(error)
