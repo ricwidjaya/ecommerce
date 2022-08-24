@@ -1,34 +1,54 @@
 <div class='container'>
-  <div class='title my-3'>
-    <h1>Order</h1>
-  </div>
-  <table class='table table-borderless table-hover'>
+  {{> admin-control-group}}
+  <table class='table table-borderless table-hover align-middle scrollspy-example-2'>
     <thead class='table-warning'>
       <tr>
+        <th scope='col'></th>
         <th scope='col'>Order ID</th>
         <th scope='col'>Customer ID</th>
         <th scope='col'>Amount</th>
         <th scope='col'>Status</th>
-        <th scope='col'>Actions</th>
+        <th scope='col'></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id='tableBody'>
       <tr>
-        <th scope='row'>1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <td>
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        </td>
+        <th scope='row'>#34A5I47T</th>
+        <td>1</td>
+        <td>$3,500</td>
+        <td>Order Placed</td>
+        <td>
+          <div class='dropdown'>
+            <button
+              class='btn'
+              type='button'
+              data-bs-toggle='dropdown'
+              aria-expanded='false'
+            >
+              <i class='bi bi-three-dots'></i>
+            </button>
+            <ul class='dropdown-menu'>
+              <li><a class='dropdown-item' href='#'>View</a></li>
+              <li><a class='dropdown-item text-danger' href='#'>Delete</a></li>
+            </ul>
+          </div>
+        </td>
       </tr>
       <tr>
         <th scope='row'>2</th>
         <td>Jacob</td>
         <td>Thornton</td>
         <td>@fat</td>
+        <td><button class='btn'><i class='bi bi-three-dots'></i></button></td>
       </tr>
       <tr>
         <th scope='row'>3</th>
         <td colspan='2'>Larry the Bird</td>
         <td>@twitter</td>
+        <td><button class='btn'><i class='bi bi-three-dots'></i></button></td>
       </tr>
     </tbody>
   </table>

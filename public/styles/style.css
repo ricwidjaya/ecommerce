@@ -3,6 +3,8 @@
   --primary-color: #1f2937;
   --light-font-color: #fff;
   --input-placeholder-color: rgba(255, 255, 255, 0.6);
+  --admin-csv-button-color: #059669;
+  --blue: #1d4ed8;
 }
 
 /* Css reset */
@@ -39,6 +41,20 @@ body {
   color: var(--input-placeholder-color);
 }
 
+.form-check-input:checked,
+.form-check-input:focus {
+  box-shadow: none;
+  border: 1px solid var(--primary-color);
+}
+.form-check-input:checked {
+  background-color: var(--primary-color);
+}
+
+.dropdown-item:active {
+  background-color: inherit;
+  color: var(--primary-color);
+}
+
 /* Title */
 .head-banner {
   padding: 8rem 5rem;
@@ -55,6 +71,13 @@ body {
   font-size: 2em;
   color: var(--light-font-color);
 }
+/* Admin */
+.admin__csv__btn,
+.admin__csv__btn:hover,
+.admin__csv__btn:focus {
+  border: 1px solid var(--admin-csv-button-color);
+  color: var(--admin-csv-button-color);
+}
 
 /* Product Grid */
 .card {
@@ -64,6 +87,20 @@ body {
 img {
   max-width: 100%;
   aspect-ratio: 1;
+}
+
+/* Search input */
+.search-box {
+  max-width: 400px;
+  border: 1px solid var(--blue);
+  border-radius: 4px;
+}
+
+.search-input,
+.search-input:focus {
+  width: 100%;
+  border: none;
+  outline: none;
 }
 
 /* Partner */

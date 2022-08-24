@@ -1,5 +1,5 @@
 const adminController = {
-  getOrder: async (req, res, next) => {
+  getOrderPage: async (req, res, next) => {
     try {
       return res.render('admin/order', {
         layout: 'admin',

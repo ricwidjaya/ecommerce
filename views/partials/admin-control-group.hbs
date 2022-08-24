@@ -1,0 +1,27 @@
+<div class='row align-items-center my-3'>
+  <div class='title col-6'>
+    {{#ifCond route 'order'}}
+      <h1>Order</h1>
+    {{/ifCond}}
+
+    {{#ifCond route 'customer'}}
+      <h1>Customer</h1>
+    {{/ifCond}}
+
+    {{#ifCond route 'product'}}
+      <h1>Product</h1>
+    {{/ifCond}}
+  </div>
+  {{! Control group }}
+  <div class='d-flex justify-content-around control-group col-6'>
+    <div class='search-box d-flex align-items-center gap-2 ps-3 flex-fill'>
+      <i class='bi bi-search'></i>
+      <input
+        class='search-input'
+        type='text'
+        placeholder='Search Order ID or Customer ID'
+      />
+    </div>
+    <button id='exportCSVButton' class='btn admin__csv__btn'>Export as CSV</button>
+  </div>
+</div>
