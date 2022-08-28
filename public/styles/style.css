@@ -28,6 +28,13 @@ body {
   color: #1f2937;
 }
 
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:hover {
+  background-color: var(--primary-color);
+  color: var(--light-font-color);
+}
+
 .form-control,
 .form-control:focus {
   background-color: transparent;

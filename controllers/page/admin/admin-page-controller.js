@@ -1,4 +1,4 @@
-const adminController = {
+const adminPageController = {
   getOrderPage: async (req, res, next) => {
     try {
       return res.render('admin/order', {
@@ -30,7 +30,19 @@ const adminController = {
     } catch (error) {
       next(error)
     }
+  },
+
+  // New product page
+  getNewProductPage: async (req, res, next) => {
+    try {
+      return res.render('admin/product-form', {
+        layout: 'admin',
+        isForNewProduct: true
+      })
+    } catch (error) {
+      next(error)
+    }
   }
 }
 
-module.exports = adminController
+module.exports = adminPageController
