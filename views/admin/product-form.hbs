@@ -4,7 +4,7 @@
       New Product
     {{/if}}
   </h1>
-  <form action='/' method='post'>
+  <form action='/api/product' method='POST' enctype='multipart/form-data'>
     <div class='row'>
       <div class='col d-flex flex-column gap-4 form'>
 
@@ -12,10 +12,10 @@
         <div class='form-floating'>
           <input
             type='text'
+            name='name'
             class='form-control'
             id='productName'
             placeholder='product-name'
-            required
           />
           <label class='form-required' for='productName'>Name</label>
         </div>
@@ -24,11 +24,11 @@
         <div class='form-floating'>
           <input
             type='number'
+            name='price'
             min='0'
             class='form-control'
             id='productPrice'
             placeholder='product-price'
-            required
           />
           <label class='form-required' for='productPrice'>Price</label>
         </div>
@@ -36,9 +36,9 @@
         {{! Category }}
         <div class='form-floating'>
           <select
+            name='category'
             class='form-select'
             aria-label='Default select example'
-            required
           >
             <option selected disabled>Please select a category</option>
             <option value='1'>One</option>
@@ -52,11 +52,11 @@
         <div class='form-floating'>
           <input
             type='number'
+            name='inventory'
             min='0'
             class='form-control'
             id='productInventory'
             placeholder='product-inventory'
-            required
           />
           <label class='form-required' for='productInventory'>Inventory</label>
         </div>
@@ -65,6 +65,7 @@
         <div class='form-floating'>
           <textarea
             class='form-control product-textarea'
+            name='description'
             placeholder='Leave some product detail here'
             id='floatingDescriptionArea'
           ></textarea>
@@ -88,6 +89,7 @@
           </label>
           <input
             type='file'
+            name='product-images'
             id='file-input'
             class='file-input'
             multiple

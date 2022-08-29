@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const adminPageController = require('../../../../../controllers/page/admin/admin-page-controller')
+const adminPageController = require('../../../../../controllers/page/admin/admin-page-controllers')
 
 router.get('/', adminPageController.getCustomerPage)
 
