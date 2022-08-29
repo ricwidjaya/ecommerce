@@ -14,7 +14,7 @@ body {
   color: var(--primary-color);
 }
 
-/* Bootstrap override */
+/* Bootstrap Override */
 .bi {
   font-size: 1.2em;
 }
@@ -25,7 +25,7 @@ body {
   background-color: var(--light-font-color);
   border: none;
   box-shadow: none;
-  color: #1f2937;
+  color: var(--primary-color);
 }
 
 .btn-primary,
@@ -35,17 +35,23 @@ body {
   color: var(--light-font-color);
 }
 
+.btn-primary-invert,
+.btn-primary-invert:focus,
+.btn-primary-invert:hover {
+  border: 1px solid var(--primary-color);
+}
+
 .form-control,
-.form-control:focus {
+.form-control:focus,
+.form-select:focus {
   background-color: transparent;
   border-radius: 0;
   box-shadow: none;
-  border: 1px solid var(--light-font-color);
-  color: var(--light-font-color);
 }
 
-.form-control::placeholder {
-  color: var(--input-placeholder-color);
+.form-control:focus,
+.form-select:focus {
+  border: 1px solid var(--primary-color);
 }
 
 .form-check-input:checked,
@@ -53,6 +59,7 @@ body {
   box-shadow: none;
   border: 1px solid var(--primary-color);
 }
+
 .form-check-input:checked {
   background-color: var(--primary-color);
 }
@@ -60,6 +67,14 @@ body {
 .dropdown-item:active {
   background-color: inherit;
   color: var(--primary-color);
+}
+
+.img-thumbnail {
+  max-width: 300px;
+}
+
+.form-floating > .product-textarea {
+  height: 150px;
 }
 
 /* Title */
@@ -78,6 +93,7 @@ body {
   font-size: 2em;
   color: var(--light-font-color);
 }
+
 /* Admin */
 .admin__csv__btn,
 .admin__csv__btn:hover,
@@ -127,4 +143,35 @@ img {
 .footer {
   background-color: var(--primary-color);
   color: var(--light-font-color);
+}
+
+.footer-input,
+.footer-input:focus {
+  border: 1px solid var(--light-font-color);
+  color: var(--light-font-color);
+}
+
+.footer-input::placeholder {
+  color: var(--input-placeholder-color);
+}
+
+/* Form */
+.form-required::after {
+  content: '*';
+  color: red;
+  margin-left: 0.5rem;
+}
+
+.image-upload-label:hover,
+.image-preview-thumbnail:hover {
+  cursor: pointer;
+}
+
+.file-input {
+  display: none;
+}
+
+.image-preview-thumbnail {
+  max-width: 50px;
+  height: auto;
 }

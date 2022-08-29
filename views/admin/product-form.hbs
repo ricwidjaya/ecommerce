@@ -1,0 +1,120 @@
+<div class='container'>
+  <h1 class='title mt-3 mb-5'>
+    {{#if isForNewProduct}}
+      New Product
+    {{/if}}
+  </h1>
+  <form action='/' method='post'>
+    <div class='row'>
+      <div class='col d-flex flex-column gap-4 form'>
+
+        {{! Name }}
+        <div class='form-floating'>
+          <input
+            type='text'
+            class='form-control'
+            id='productName'
+            placeholder='product-name'
+            required
+          />
+          <label class='form-required' for='productName'>Name</label>
+        </div>
+
+        {{! Price }}
+        <div class='form-floating'>
+          <input
+            type='number'
+            min='0'
+            class='form-control'
+            id='productPrice'
+            placeholder='product-price'
+            required
+          />
+          <label class='form-required' for='productPrice'>Price</label>
+        </div>
+
+        {{! Category }}
+        <div class='form-floating'>
+          <select
+            class='form-select'
+            aria-label='Default select example'
+            required
+          >
+            <option selected disabled>Please select a category</option>
+            <option value='1'>One</option>
+            <option value='2'>Two</option>
+            <option value='3'>Three</option>
+          </select>
+          <label class='form-required' for='floatingSelect'>Category</label>
+        </div>
+
+        {{! Inventory }}
+        <div class='form-floating'>
+          <input
+            type='number'
+            min='0'
+            class='form-control'
+            id='productInventory'
+            placeholder='product-inventory'
+            required
+          />
+          <label class='form-required' for='productInventory'>Inventory</label>
+        </div>
+
+        {{! Description }}
+        <div class='form-floating'>
+          <textarea
+            class='form-control product-textarea'
+            placeholder='Leave some product detail here'
+            id='floatingDescriptionArea'
+          ></textarea>
+          <label for='floatingDescriptionArea'>Description</label>
+        </div>
+      </div>
+
+      {{! Image upload }}
+      <div class='col product-images text-center'>
+        <h3 class='mb-3'>Upload Product Images
+          <small class='form-required'>(up to 5)</small></h3>
+
+        {{! Image file input }}
+        <div class='image-upload'>
+          <label for='file-input' class='image-upload-label'>
+            <img
+              src='https://cdn-icons-png.flaticon.com/512/2198/2198323.png'
+              alt='Image Input'
+              class='img-thumbnail'
+            />
+          </label>
+          <input
+            type='file'
+            id='file-input'
+            class='file-input'
+            multiple
+            accept='image/png, image/gif, image/jpeg, image/jpg'
+          />
+        </div>
+
+        {{! Image preview grid x 5 }}
+        <div class='d-flex justify-content-center gap-2 mt-3'>
+          <img src='' class='image-preview-thumbnail' />
+          <img src='' class='image-preview-thumbnail' />
+          <img src='' class='image-preview-thumbnail' />
+          <img src='' class='image-preview-thumbnail' />
+          <img src='' class='image-preview-thumbnail' />
+        </div>
+
+      </div>
+    </div>
+
+    {{! Submit or Save buttons }}
+    <div class='d-flex mt-3 gap-3 justify-content-center'>
+      <button
+        type='button'
+        class='btn btn-primary-invert flex-grow-1'
+      >Save</button>
+      <button type='submit' class='btn btn-primary flex-grow-1'>Submit</button>
+    </div>
+
+  </form>
+</div>
