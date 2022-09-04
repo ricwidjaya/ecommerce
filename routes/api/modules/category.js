@@ -5,5 +5,6 @@ const categoryController = require('../../../controllers/api/category-controller
 
 router.get('/', categoryController.getCategories)
 router.post('/', categoryController.postCategory)
+router.delete('/:id', categoryController.deleteCategory)
 
 module.exports = router
