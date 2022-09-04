@@ -25,6 +25,10 @@ const categoryController = {
 
       if (!name) throw new Error('Category name is required!')
 
+      const category = await Category.findOne({ where: { name } })
+
+      if (category) throw new Error('Category already exists.')
+
       const newCategory = await Category.create({
         name
       })
