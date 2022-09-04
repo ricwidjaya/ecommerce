@@ -42,12 +42,31 @@ const categoryController = {
     }
   },
 
+  // Put a category
+  putCategory: async (req, res, next) => {
+    try {
+      const { id } = req.params
+      const { name } = req.body
+
+      if (!name) throw new Error('Category name is required!')
+
+      const category = await Category.findByPk(id)
+
+      const updatedCategory = await category.update({ name })
+
+      return res.json({
+        status: 'success',
+        data: updatedCategory
+      })
+    } catch (error) {
+      next(error)
+    }
+  },
+
   // Delete a category
   deleteCategory: async (req, res, next) => {
     try {
       const { id } = req.params
-
-      if (!id) throw new Error('Category id is required!')
 
       await Category.destroy({
         where: { id }
