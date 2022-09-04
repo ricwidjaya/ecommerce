@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
   return res.render('index')
 })
 
-router.get('*', pageErrorHandler)
+// Fallback route for 404 not found
+router.get('/', pageErrorHandler)
 
 module.exports = router
