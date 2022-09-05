@@ -3,6 +3,7 @@ module.exports = {
   // 404 IS NOT considered as an error in express,
   // so there's no way to catch it with express error handler
   // To deal with 404 error, just use a normal middleware function
+  // Place this middleware at the very bottom of app.js as 404 handler
   pageErrorHandler: async (req, res, next) => {
     try {
       return res.status(404).render('404', {

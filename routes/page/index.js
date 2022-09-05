@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { pageErrorHandler } = require('../../middleware/error-handler')
+// const { pageErrorHandler } = require('../../middleware/error-handler')
 
 const admin = require('./modules/admin/')
 
@@ -11,6 +11,6 @@ router.get('/', (req, res) => {
 })
 
 // Fallback route for 404 not found
-router.get('*', pageErrorHandler)
+// router.get('/', pageErrorHandler)
 
 module.exports = router

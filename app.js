@@ -6,6 +6,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const { pages, api } = require('./routes')
+const { pageErrorHandler } = require('./middleware/error-handler')
 const hbs = require('express-handlebars')
 const handlebarHelpers = require('./helpers/handlebar-helpers')
 const methodOverride = require('method-override')
@@ -27,3 +28,6 @@ const PORT = process.env.PORT
 app.listen(PORT, () => {
   console.log(`Steaky is running on port ${PORT}.`)
 })
+
+// 404 error handler
+app.use(pageErrorHandler)

@@ -49,7 +49,8 @@ const adminPageController = {
     try {
       return res.render('admin/category', {
         layout: 'admin',
-        route: 'category'
+        route: 'category',
+        script: 'admin/category'
       })
     } catch (error) {
       next(error)
