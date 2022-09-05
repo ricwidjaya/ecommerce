@@ -3,6 +3,6 @@ const router = express.Router()
 
 const adminPageController = require('../../../../../controllers/page/admin-page-controllers')
 
-router.get('/', adminPageController.getOrderPage)
+router.get('/', adminPageController.getCategoryPage)
 
 module.exports = router

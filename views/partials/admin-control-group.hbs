@@ -16,6 +16,10 @@
           ></i>New Product</a>
       </div>
     {{/ifCond}}
+
+    {{#ifCond route 'category'}}
+      <h1>Category</h1>
+    {{/ifCond}}
   </div>
   {{! Control group }}
   <div class='d-flex justify-content-around control-group col-6'>
@@ -24,7 +28,22 @@
       <input
         class='search-input'
         type='text'
+
+        {{#ifCond route 'order'}}
         placeholder='Search Order ID or Customer ID'
+        {{/ifCond}}
+
+        {{#ifCond route 'customer'}}
+        placeholder='Search Customer ID/Name'
+        {{/ifCond}}
+
+        {{#ifCond route 'product'}}
+        placeholder='Search Product ID/Name/Category'
+        {{/ifCond}}
+
+        {{#ifCond route 'category'}}
+        placeholder='Search Category ID/Name'
+        {{/ifCond}}
       />
     </div>
     <button id='exportCSVButton' class='btn admin__csv__btn'>Export as CSV</button>

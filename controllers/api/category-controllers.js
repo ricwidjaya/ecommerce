@@ -21,8 +21,10 @@ const categoryController = {
   // Post a category
   postCategory: async (req, res, next) => {
     try {
-      const { name } = req.body
+      let { name } = req.body
 
+      // remove meaningless spaces from the name
+      name = name.trim()
       if (!name) throw new Error('Category name is required!')
 
       const category = await Category.findOne({ where: { name } })
@@ -46,8 +48,10 @@ const categoryController = {
   putCategory: async (req, res, next) => {
     try {
       const { id } = req.params
-      const { name } = req.body
+      let { name } = req.body
 
+      // remove meaningless spaces from the name
+      name = name.trim()
       if (!name) throw new Error('Category name is required!')
 
       const category = await Category.findByPk(id)

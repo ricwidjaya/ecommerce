@@ -42,6 +42,18 @@ const adminPageController = {
     } catch (error) {
       next(error)
     }
+  },
+
+  // Category page
+  getCategoryPage: async (req, res, next) => {
+    try {
+      return res.render('admin/category', {
+        layout: 'admin',
+        route: 'category'
+      })
+    } catch (error) {
+      next(error)
+    }
   }
 }
 
