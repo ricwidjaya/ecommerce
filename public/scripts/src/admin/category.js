@@ -1,26 +1,20 @@
-<div class='container'>
-  {{> admin-control-group}}
-  <table class='table table-borderless table-hover align-middle text-center'>
-    <thead class='table-warning'>
+const api = require('../api')
+
+renderCategoryTable()
+
+const renderCategoryTable = async () => {
+  const categoryData = await api.getCategories()
+  const table = document.querySelector('#tableBody')
+  let rawHTML = ''
+  categoryData.forEach(category => {
+    rawHTML += `
       <tr>
-        <th scope='col'>
-          <input class="form-check-input" type="checkbox" value="" id="selectAllCheckbox">
-        </th>
-        <th scope='col'>Category ID</th>
-        <th scope='col'>Name</th>
-        <th scope='col'>Product Amount</th>
-        <th scope='col'></th>
-      </tr>
-    </thead>
-    <tbody id='tableBody'>
-      {{!-- Render Template --}}
-      {{!-- <tr>
         <td>
           <input class="form-check-input" type="checkbox" value="${category.id}">
         </td>
         <th scope='row'>#${category.id}</th>
         <td>${category.name}</td>
-        <td>3</td>     
+        <td>${category.productAmount}3</td>     
         <td>
           <div class='dropdown'>
             <button
@@ -38,7 +32,9 @@
             </ul>
           </div>
         </td>
-      </tr> --}}
-    </tbody>
-  </table>
-</div>
+      </tr>
+      `
+  })
+
+  table.innerHTML = rawHTML
+}

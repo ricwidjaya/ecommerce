@@ -22,8 +22,8 @@ module.exports = {
       })
     } else {
       res.status(500).json({
-        status: 'err',
-        message: `${err}`
+        status: 'error',
+        message: `Error: ${err}`
       })
     }
     next(err)

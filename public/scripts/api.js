@@ -2180,12 +2180,28 @@ module.exports = {
 
 },{"./helpers/bind":18}],33:[function(require,module,exports){
 const axios = require('axios').default
-axios
-  .get('/api/category')
-  .then(res => {
-    console.log(res)
-  })
-  .catch(err => console.log(err))
+
+const api = {
+  // Get all category data
+  getCategories: async () => {
+    try {
+      const res = await axios.get('/api/category')
+      return extractResponse(res)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
+module.exports = api
+
+const extractResponse = res => {
+  if (res.data.status === 'success') {
+    return res.data.data
+  } else {
+    return res.data.message
+  }
+}
 
 },{"axios":1}],34:[function(require,module,exports){
 'use strict'
