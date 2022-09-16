@@ -2,7 +2,7 @@ const api = require('../api')
 
 renderCategoryTable()
 
-const renderCategoryTable = async () => {
+async function renderCategoryTable() {
   const categoryData = await api.getCategories()
   const table = document.querySelector('#tableBody')
   let rawHTML = ''
@@ -12,7 +12,7 @@ const renderCategoryTable = async () => {
         <td>
           <input class="form-check-input" type="checkbox" value="${category.id}">
         </td>
-        <th scope='row'>#${category.id}</th>
+        <td>${category.id}</td>
         <td>${category.name}</td>
         <td>${category.productAmount}3</td>     
         <td>

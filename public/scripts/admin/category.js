@@ -2183,7 +2183,7 @@ const api = require('../api')
 
 renderCategoryTable()
 
-const renderCategoryTable = async () => {
+async function renderCategoryTable() {
   const categoryData = await api.getCategories()
   const table = document.querySelector('#tableBody')
   let rawHTML = ''
@@ -2193,7 +2193,7 @@ const renderCategoryTable = async () => {
         <td>
           <input class="form-check-input" type="checkbox" value="${category.id}">
         </td>
-        <th scope='row'>#${category.id}</th>
+        <td>${category.id}</td>
         <td>${category.name}</td>
         <td>${category.productAmount}3</td>     
         <td>
@@ -2223,6 +2223,13 @@ const renderCategoryTable = async () => {
 },{"../api":34}],34:[function(require,module,exports){
 const axios = require('axios').default
 
+const extractResponse = res => {
+  if (res.data.status === 'success') {
+    return res.data.data
+  } else {
+    return res.data.message
+  }
+}
 const api = {
   // Get all category data
   getCategories: async () => {
@@ -2236,14 +2243,6 @@ const api = {
 }
 
 module.exports = api
-
-const extractResponse = res => {
-  if (res.data.status === 'success') {
-    return res.data.data
-  } else {
-    return res.data.message
-  }
-}
 
 },{"axios":1}],35:[function(require,module,exports){
 'use strict'
