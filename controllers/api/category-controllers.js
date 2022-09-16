@@ -18,6 +18,21 @@ const categoryController = {
     }
   },
 
+  // Get one category
+  getCategory: async (req, res, next) => {
+    try {
+      const { id } = req.params
+      const category = await Category.findByPk(id)
+
+      return res.json({
+        status: 'success',
+        data: category
+      })
+    } catch (error) {
+      next(error)
+    }
+  },
+
   // Post a category
   postCategory: async (req, res, next) => {
     try {
