@@ -14,7 +14,7 @@ async function renderCategoryTable() {
         </td>
         <td>${category.id}</td>
         <td>${category.name}</td>
-        <td>${category.productAmount}3</td>     
+        <td>${category.productAmount}</td>     
         <td>
           <div class='dropdown'>
             <button
