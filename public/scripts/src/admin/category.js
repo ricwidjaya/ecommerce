@@ -26,7 +26,7 @@ async function renderCategoryTable() {
               <i class='bi bi-three-dots'></i>
             </button>
             <ul class='dropdown-menu'>
-              <li><a class='dropdown-item' href='/category/${category.id}/edit'>Edit</a></li>
+              <li><a class='dropdown-item' href='/admin/category/${category.id}/edit'>Edit</a></li>
               <li><a class='dropdown-item text-danger'
               data-category-id='${category.id}' >Delete</a></li>
             </ul>

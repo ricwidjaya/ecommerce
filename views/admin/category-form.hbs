@@ -1,0 +1,28 @@
+<div class='container'>
+  <h1 class='mb-3'>
+    {{#ifCond route 'new'}}
+      New Category
+    {{else}}
+      Edit Category
+    {{/ifCond}}
+  </h1>
+  <form>
+    <div class='w-25'>
+      {{! Name }}
+      <div class='form-floating mb-3'>
+        <input
+          type='text'
+          name='name'
+          class='form-control'
+          id='categoryName'
+          placeholder='category-name'
+          value='{{name}}'
+          data-category-id='{{id}}'
+          required
+        />
+        <label class='form-required' for='categoryName'>Name</label>
+      </div>
+      <button type='submit' class='btn btn-primary'>Submit</button>
+    </div>
+  </form>
+</div>

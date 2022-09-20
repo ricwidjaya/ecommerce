@@ -2180,44 +2180,41 @@ module.exports = {
 
 },{"./helpers/bind":18}],33:[function(require,module,exports){
 const api = require('../api')
+const form = document.querySelector('form')
+const input = document.querySelector('#categoryName')
 
-renderCategoryTable()
+// http://localhost:3000/admin/category/24/edit
+const url = window.location.pathname
+const urlPaths = url.split('/')
+const action = urlPaths.pop()
 
-async function renderCategoryTable() {
-  const categoryData = await api.getCategories()
-  const table = document.querySelector('#tableBody')
-  let rawHTML = ''
-  categoryData.forEach(category => {
-    rawHTML += `
-      <tr>
-        <td>
-          <input class="form-check-input" type="checkbox" value="${category.id}">
-        </td>
-        <td>${category.id}</td>
-        <td>${category.name}</td>
-        <td>${category.productAmount}</td>     
-        <td>
-          <div class='dropdown'>
-            <button
-              class='btn'
-              type='button'
-              data-bs-toggle='dropdown'
-              aria-expanded='false'
-            >
-              <i class='bi bi-three-dots'></i>
-            </button>
-            <ul class='dropdown-menu'>
-              <li><a class='dropdown-item' href='/admin/category/${category.id}/edit'>Edit</a></li>
-              <li><a class='dropdown-item text-danger'
-              data-category-id='${category.id}' >Delete</a></li>
-            </ul>
-          </div>
-        </td>
-      </tr>
-      `
-  })
+addFromListener()
 
-  table.innerHTML = rawHTML
+async function addFromListener() {
+  // Edit
+  if (action === 'edit') {
+    // Get current category name
+    const categoryId = urlPaths.pop()
+    const category = await api.getCategory(categoryId)
+    input.value = category.name
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault()
+      const name = input.value
+      if (!name) return window.alert('Please input category name.')
+      const res = await api.putCategory(categoryId, name)
+      if (res) return (window.location.href = '/admin/category')
+    })
+    // New
+  } else if (action === 'new') {
+    form.addEventListener('submit', async event => {
+      event.preventDefault()
+      const name = input.value
+      if (!name) return window.alert('Please input category name.')
+      const res = await api.postCategory(name)
+      if (res) return (window.location.href = '/admin/category')
+    })
+  }
 }
 
 },{"../api":34}],34:[function(require,module,exports){

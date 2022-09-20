@@ -1,3 +1,5 @@
+const { Category } = require('../../models')
+
 const adminPageController = {
   getOrderPage: async (req, res, next) => {
     try {
@@ -52,6 +54,27 @@ const adminPageController = {
         route: 'category',
         script: 'admin/category'
       })
+    } catch (error) {
+      next(error)
+    }
+  },
+
+  // Get category form page
+  getCategoryForm: async (req, res, next) => {
+    try {
+      if (req.path === '/new') {
+        return res.render('admin/category-form', {
+          layout: 'admin',
+          route: 'new',
+          script: 'admin/category-form'
+        })
+      } else {
+        return res.render('admin/category-form', {
+          layout: 'admin',
+          route: 'edit',
+          script: 'admin/category-form'
+        })
+      }
     } catch (error) {
       next(error)
     }
