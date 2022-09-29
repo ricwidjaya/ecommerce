@@ -2,14 +2,14 @@ const api = require('../api')
 const form = document.querySelector('form')
 const input = document.querySelector('#categoryName')
 
-// http://localhost:3000/admin/category/24/edit
-const url = window.location.pathname
-const urlPaths = url.split('/')
-const action = urlPaths.pop()
-
 addFromListener()
 
 async function addFromListener() {
+  // http://localhost:3000/admin/category/24/edit
+  // Parse url to know it's edit or new action
+  const url = window.location.pathname
+  const urlPaths = url.split('/')
+  const action = urlPaths.pop()
   // Edit
   if (action === 'edit') {
     // Get current category name

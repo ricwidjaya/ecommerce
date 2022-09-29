@@ -15,7 +15,7 @@ const api = {
       const res = await axios.get('/api/category')
       return extractResponse(res)
     } catch (error) {
-      window.alert(error.response.data.message)
+      alertUser(error)
     }
   },
 
@@ -25,7 +25,7 @@ const api = {
       const res = await axios.get(`/api/category/${id}`)
       return extractResponse(res)
     } catch (error) {
-      window.alert(error.response.data.message)
+      alertUser(error)
     }
   },
 
@@ -35,7 +35,7 @@ const api = {
       const res = await axios.post(`/api/category/`, { name })
       return extractResponse(res)
     } catch (error) {
-      window.alert(error.response.data.message)
+      alertUser(error)
     }
   },
 
@@ -45,7 +45,7 @@ const api = {
       const res = await axios.put(`/api/category/${id}`, { name })
       return extractResponse(res)
     } catch (error) {
-      window.alert(error.response.data.message)
+      alertUser(error)
     }
   },
 
@@ -55,9 +55,15 @@ const api = {
       const res = await axios.delete(`/api/category/${id}`)
       return extractResponse(res)
     } catch (error) {
-      window.alert(error.response.data.message)
+      alertUser(error)
     }
   }
 }
 
 module.exports = api
+
+// Alert error message from backend
+function alertUser(error) {
+  const errorMessage = error.response.data.message
+  return window.alert(errorMessage)
+}

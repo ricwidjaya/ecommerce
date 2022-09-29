@@ -35,6 +35,7 @@ body {
   color: var(--light-font-color);
 }
 
+/* For cancel buttons */
 .btn-primary-invert,
 .btn-primary-invert:focus,
 .btn-primary-invert:hover {

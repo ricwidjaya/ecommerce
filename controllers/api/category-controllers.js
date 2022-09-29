@@ -69,6 +69,10 @@ const categoryController = {
       name = name.trim()
       if (!name) throw new Error('Category name is required!')
 
+      // Find if there's duplicate category
+      const duplicateCategory = await Category.findOne({ where: { name } })
+      if (duplicateCategory) throw new Error('Category already exists.')
+
       const category = await Category.findByPk(id)
 
       const updatedCategory = await category.update({ name })
