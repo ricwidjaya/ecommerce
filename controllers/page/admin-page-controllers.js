@@ -1,5 +1,3 @@
-const { Category } = require('../../models')
-
 const adminPageController = {
   getOrderPage: async (req, res, next) => {
     try {
@@ -39,6 +37,7 @@ const adminPageController = {
     try {
       return res.render('admin/product-form', {
         layout: 'admin',
+        script: 'admin/product-form',
         isForNewProduct: true
       })
     } catch (error) {

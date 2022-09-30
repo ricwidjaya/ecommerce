@@ -12,14 +12,6 @@ router.post(
   productController.postProduct
 )
 
-router.get('/', (req, res) => {
-  return res.json({
-    status: 200,
-    data: {
-      name: 'richard',
-      product: 'meat'
-    }
-  })
-})
+
 
 module.exports = router
